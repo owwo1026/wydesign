@@ -1,0 +1,28 @@
+/* ContactUs 聯絡我們 */
+.contact {
+    margin-bottom: 100px;
+}
+.contact .contactForm{
+    /* text-align: left; */
+    /* padding-left: 50px; */
+    padding-right: 50px;
+}
+.contact .ant-form-item{
+    margin-bottom: 25px;
+}
+.contact .ant-form-item-label > label, .ant-form label{
+    font-size: 17px;
+}
+.contact .myMiniInfo{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.contact .myMiniInfoDetail{
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.contact .myMiniInfoDetail p {
+    margin-bottom: 5px;
+}

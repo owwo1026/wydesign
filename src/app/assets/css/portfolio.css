@@ -1,0 +1,82 @@
+
+/* portfolio 作品集 */
+.works {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+.works .work-wrap {
+    width: 75%;
+}
+.works .work-content {
+    /* width: 100%; */
+    margin-top: 80px;
+    padding-left: 10%;
+    height: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.works .work-content .work-title {
+    font-size: 1.75rem;
+}
+.works .work-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.works .work-list .work-list-item {
+    width: 40%;
+    height: 40%;
+    margin: 5%;
+    padding: 0.5%;
+    list-style-type: none;
+    border-color: rgb(155, 119, 86);
+    border-style: double;
+    overflow: hidden;
+}
+.works .work-list .work-list-item:nth-child(odd){
+    position: relative;
+    transform: translateY(-50%);
+}
+.work-list-item :hover{
+    opacity: 0.7;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    color:rgba(205,184,167,1);
+}
+.project-img{
+    overflow: hidden;
+}
+.project-img img{
+    width: 100%;
+}
+.project-title {
+    color: #000000;
+    font-size: 1.35rem;
+    letter-spacing: 4px;
+    margin: 10px;
+    text-align: center;
+}
+.project-desc {
+    color: #000000;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin: 10px;
+}
+
+/* portfolioInfo 作品集內頁 */
+
+.portfolioInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80%;
+}
+.portfolioInfo-imgList {
+    display: flex;
+    flex-flow: row wrap;
+}
+.portfolioInfo-imgItems {
+    
+}

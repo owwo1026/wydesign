@@ -1,0 +1,287 @@
+@import '~antd/dist/antd.css';
+
+@font-face {
+    font-family: SweetSansProRegular;
+    src: url(../font/sweet-sans-pro-cufonfonts-webfont/SweetSansProRegular.woff);
+}
+/* background: #907d62; */
+/* background: #e2d6bb; */
+/* background: #797769; */
+/* background: #797769c2; */
+html, body {
+    height: 100%; /* 外層高度100% */
+    margin: 0;
+    font-family: "SweetSansProRegular", "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+    font-weight: bold;
+    text-align: center;
+    overflow: auto;
+    display: flex;  
+    flex-flow: column wrap;
+    flex-grow: 1;
+}
+.wrapper > * {
+    flex: 1 100%;
+    max-width: 100%;
+}
+.content {
+    width:100%;
+    min-height: 100vh;
+    display: flex;  
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+    background: #fff;
+}
+#components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;   
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+/* Header */
+.header{ 
+    display: flex;  
+    flex-flow: row wrap;
+    /* height: 100vh; */
+    /* background-image: url('../images/img/T01_3.jpeg'); */
+    background-position-y: 66%;
+    background-repeat: space;
+    background-position: center center;
+    background-size: cover;
+    align-content: space-between;
+    justify-content: center;
+}
+.mask {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    /* height: 100vh; */
+}
+.header-mini {
+    background-image:none;
+    height: 120px;
+}
+.header .headerTop {
+    padding: 0% 5%;
+    flex: 1 1 100%;
+    display: flex;  
+    flex-flow: row nowrap;
+    justify-content: right;
+    height: 120px;
+    /* background-color: #717061d3; */
+    background-color: rgba(113, 112, 97, 0.6);    
+}
+.header-fixed-top{
+    width: 100%;
+    background-color: #797769;
+    margin-top: 0;
+    position: fixed;
+    top:0px;
+    animation-name: fadeInDown;
+    z-index: 999;
+}
+.header .headerTop .logo {
+    flex: 1 1 30%;
+    display: flex;
+    max-width: 100%;
+    height: 120px;
+}
+#headerLogo {
+    margin: 5px;
+    padding-left: 30px;
+}
+.header .headerTop .menu {
+    flex: 1 1 70%;
+}
+.header .headerTop .navbar-nav{
+    margin-right: 50px;
+}
+.header .headerTop .miniMenu {
+    flex: 1 1 0%;
+    display: none;
+}
+.header .headerTop .menu ul {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: end;
+    /* margin-top: 10px; */
+}
+.header .headerTop .menu ul li{
+    list-style-type: none;
+    font-size: 18px;
+    padding-bottom: 15px;
+    margin-left: 50px;
+    white-space: nowrap;
+}
+.header .menu a {
+    display: inline-flex;
+    color: #e7e2c5;
+    font-size: 16px;
+    width: 80px;
+    justify-content: center;
+    font-weight: bold;
+}
+.header .logo a {
+    display: inline-flex;
+}
+.header .headerTop .menu ul li a span {
+    display: none;
+}
+.header .headerTop .menu ul li a:hover span {
+    display: block;
+    padding-bottom: 17px;
+    border-radius: 5px;
+}
+.header .headerTop .menu ul li a:hover p{
+    display: none;
+    border-radius: 5px;
+    transform: scale(1.2);
+}
+.header .headerTop .menu ul li a:active{
+    border-radius: 5px;
+    transform: scale(1.2);
+}
+/* pad */
+@media (max-width: 880px) {
+    .header .headerTop {
+        flex-flow: row nowrap;
+    }
+    .header .headerTop .menu ul li{
+        width: 100px;
+    }
+}
+/* mobile */
+@media (max-width: 580px) {
+    .header .headerTop {
+        display: flex;  
+        flex-flow: row nowrap;
+        align-items: left;
+        justify-content: right;
+        height: 10vh;
+    }
+    .header .headerTop .miniMenu {
+        flex: 1 1 80%;
+        justify-content: right;
+        align-items: center;
+        display: flex;
+        padding: 20px;
+    }
+    .header .headerTop .menu {
+        flex: 1 1 0%;
+        display: none;
+    }
+    .dropdown-content {
+        z-index: 9999;
+        display: none;
+        position: absolute;
+        top:50px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    /* .header-fixed-top{
+        width: 100%;
+        background-color: #18191ba3;
+        margin-top: 0;
+        position: fixed;
+        top:0px;
+        animation-name: fadeInDown;
+        z-index: 999;
+    } */
+    /* .header .headerTop .logo {
+        flex: 1 1 20%;
+        display: flex;
+        max-width: 100%;
+        height: 80px;
+    } */
+    /* .header .headerBottom {
+        flex: 1 100%;
+        width: 100%;
+        max-height: 20vh;
+        overflow: hidden;
+    } */
+}
+/* Footer */
+.footer{
+    flex: 1 1 100%;
+    background: rgb(145, 144, 132);
+    color: #e2d6bb;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 120px;
+    padding: 30px;
+}
+.footer .text {
+    margin-left: 30px;
+}
+/* 通用 */
+.content {
+    background-color: #e2d6bb34;
+}
+
+h1 {
+    font-size: 40px;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+}
+.title h1{
+    font-size: 35px;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Side Bar */
+.leftbox {
+    position: fixed;
+    z-index: 9999;
+    right: 2rem;
+    bottom: 15rem;
+    height: 80px;
+    display: flex;  
+    flex-flow: column wrap;
+}
+.leftbox .myBar {
+    display: flex;
+    flex-flow: column wrap;
+}
+.leftbox .myBar a {
+    margin-bottom: 20%;
+}
+.leftbox a {
+    color: #797769;
+    font-weight: bold;
+}
+.leftbox a:hover{
+    color: rgb(145, 144, 132);
+    transform: scale(1.1);
+}
+.back_to_top {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}

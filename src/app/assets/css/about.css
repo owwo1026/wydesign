@@ -1,0 +1,187 @@
+/* aboutInfo 關於維域*/
+.aboutInfo{
+    margin-bottom: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 18px;
+}
+/* 關於維域 */
+.aboutInfo .about-wy{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 50px 15%;
+    width: 100%;
+    text-align: center;
+}
+.aboutInfo .about-wy .about-wy-title{
+    font-family: fantasy;
+    flex: 1 1 50%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #907d62;
+    color: #907d62;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 15px;  /* 字母間距 */
+}
+.aboutInfo .about-wy .about-wy-content{
+    flex: 1 1 50%;
+}
+.aboutInfo .about-blank {
+    height: 300px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+/* 分隔圖 */
+.aboutInfo .about-blank-img-1 img {
+    position: relative;
+    top: -660px;
+}
+/* 共用 */
+.aboutInfo .about-title{
+    flex: 1 1 50%;
+    /* padding: 50px 15%; */
+    color: #907d62;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    letter-spacing: 10px; /* 字母間距 */
+    text-align: center;
+    margin: 20px 0px;
+}
+.about-title-en{
+    font-family: fantasy;
+    font-size: 22px;
+}
+/* 設計理念 */
+.aboutInfo .about-design{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 50px 10%;
+    width: 100%;
+    text-align: center;
+}
+.aboutInfo .about-design .about-design-content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    min-height: 500px;
+}
+.aboutInfo .about-design .about-design-content-img {
+    flex: 1 1 50%;
+    overflow: hidden;
+    margin-left: 15px;
+}
+.aboutInfo .about-design .about-design-content-text {
+    flex: 1 1 50%;
+    padding: 0px 30px;
+    text-align: justify;
+    background-color:#fdf1d533;
+    border-color: rgba(230,206,184,1);
+    border-style: solid;
+}
+
+/* 服務項目 */
+.aboutInfo .about-service{
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #b69f7c6a;
+    margin: 50px 50px;
+    height: 200px;
+    width: 100%;
+    letter-spacing: 3px; /* 字母間距 */
+}
+.aboutInfo .about-service .about-service-title{
+    flex: 1 1 20%;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+.aboutInfo .about-service .about-service-list{
+    flex: 1 1 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 15px;
+}
+.aboutInfo .about-service .about-service-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50%;
+    text-align:center;
+    margin: 10px 30px;
+    border-color: rgb(155, 119, 86);
+    border-style: double;
+    font-size: 16px;
+    letter-spacing: 2px; /* 字母間距 */
+}
+
+/* 其他連結 */
+.aboutInfo .about-other{
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 80px 5%;
+    width: 100vw;
+    text-align: center;
+    overflow: hidden;
+}
+.aboutInfo .about-other .about-other-go {
+    flex: 1 1 50%;
+    margin-inline: 20px;
+    max-width: 100%;
+    max-height: 350px;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    justify-content: center;
+}
+.aboutInfo .about-other .about-other-img {
+    flex: 1 1 80%;
+    overflow: hidden;
+    height: 100%;
+}
+.aboutInfo .about-other .about-other-img img{
+    width: 100%;
+}
+.aboutInfo .about-other .about-other-img:hover {
+    opacity: 0.7;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+.aboutInfo .about-other .about-other-content{
+    flex: 1 1 20%;
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 22px;
+    font-family: fantasy;
+    align-items: center;
+    justify-content: center;
+}
+.aboutInfo .about-other .about-other-content-text{
+    color:rgba(37,38,38,1);
+    transition-duration: 0.5s;
+    transition-property: color;
+}
+.aboutInfo .about-other .about-other-content-text:hover{
+    color:rgba(205,184,167,1);
+}
+.aboutInfo .about-other .about-other-content-link{
+    border-bottom: 1px solid #907d62;
+    color:rgba(168,147,134,1);
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    text-align: center;
+    font-family: SweetSansProRegular;
+
+}
+
+/* <div className="about-other-work">
+    <div className="about-other-img"><img src={example} /></div>
+    <div className="about-other-work-content">
+        <div className="about-other-work-content-text"></div>
+        <div className="about-other-work-content-link"></div>
+    </div>
+</div> */
