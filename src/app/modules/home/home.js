@@ -4,9 +4,9 @@ import $ from 'jquery'
 import '../../assets/css/home.css';
 import logo from "../../assets/images/logo/logo_c_1.png";
 
-export default () => {
+const Home = () => {
 // 幻燈片設定
-const bannerPath = require.context('../../assets/images/wy_logo/part/2/');
+const bannerPath = require.context('../../assets/images/homeBanner');
 const bannerList =bannerPath.keys().map(bannerPath);
 var imgList = [];
 var logoPartList = [];
@@ -67,3 +67,4 @@ return (
   </div>
 )
 };
+export default Home 

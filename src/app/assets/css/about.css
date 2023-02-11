@@ -6,12 +6,24 @@
     font-size: 18px;
 }
 /* 關於維域 */
+.aboutInfo .about-banner {
+    position: absolute;
+    top: 0%;
+    z-index: -99;
+}
+.aboutInfo .about-banner img{
+    width: 100vw;
+    min-height: 100vh;
+}
 .aboutInfo .about-wy{
+    margin-top: 100vh;
     display: flex;
     flex-flow: column nowrap;
     padding: 50px 15%;
     width: 100%;
     text-align: center;
+    background-image: url('../images/logo/logo_c_10.png');
+    /* background-color: rgba(0, 0, 0, .6); */
 }
 .aboutInfo .about-wy .about-wy-title{
     font-family: fantasy;

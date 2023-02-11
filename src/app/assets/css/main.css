@@ -56,16 +56,18 @@ html, body {
     flex-flow: row wrap;
     /* height: 100vh; */
     /* background-image: url('../images/img/T01_3.jpeg'); */
-    background-position-y: 66%;
+    /* background-position-y: 66%;
     background-repeat: space;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
     align-content: space-between;
     justify-content: center;
+    margin: 0% 5%;
 }
 .mask {
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 100vw;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* width: 100vw; */
+    /* border-radius: 10px; */
     /* height: 100vh; */
 }
 .header-mini {
@@ -73,21 +75,26 @@ html, body {
     height: 120px;
 }
 .header .headerTop {
-    padding: 0% 5%;
     flex: 1 1 100%;
     display: flex;  
     flex-flow: row nowrap;
     justify-content: right;
     height: 120px;
-    /* background-color: #717061d3; */
-    background-color: rgba(113, 112, 97, 0.6);    
+    padding: 0% 3vw;
+    background-color: #6A6454;
+    border-radius: 0% 0% 10px 10px;
+    box-shadow: 8px 8px 8px rgb(0 0 0 / 70%);
+    width: 90vw;
 }
 .header-fixed-top{
     width: 100%;
-    background-color: #797769;
+    padding: 0% 5%;
+    /* border-radius: 0% 0% 10px 10px; */
+    box-shadow: 8px 8px 8px rgb(0 0 0 / 70%);
     margin-top: 0;
     position: fixed;
-    top:0px;
+    top: 0%;
+    left: 5%;
     animation-name: fadeInDown;
     z-index: 999;
 }
@@ -116,13 +123,13 @@ html, body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: end;
-    align-items: end;
-    /* margin-top: 10px; */
+    align-items: center;
 }
 .header .headerTop .menu ul li{
     list-style-type: none;
     font-size: 18px;
-    padding-bottom: 15px;
+    padding-top: 15px;
+    /* padding-bottom: 15px; */
     margin-left: 50px;
     white-space: nowrap;
 }
@@ -225,7 +232,7 @@ html, body {
 /* Footer */
 .footer{
     flex: 1 1 100%;
-    background: rgb(145, 144, 132);
+    background: #6A6454;
     color: #e2d6bb;
     justify-content: center;
     align-items: center;
@@ -237,6 +244,7 @@ html, body {
 .footer .text {
     margin-left: 30px;
 }
+
 /* 通用 */
 .content {
     background-color: #e2d6bb34;

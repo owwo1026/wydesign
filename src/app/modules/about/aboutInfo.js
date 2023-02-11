@@ -1,11 +1,14 @@
 import React from "react";
 import "../../assets/css/about.css";
 import example from "../../assets/images/logo/logo_sample.jpg";
-// <img src={example} />
+import banner from "../../assets/images/homeBanner/T01_3.jpeg";
 
-export default () => {
+const About = () => {
   return (
     <div className="aboutInfo">
+      <div className="about-banner">
+        <img src={banner} />
+      </div>
       {/* 第一段 關於維域 */}
       <div className="about-wy">
         <div className="about-title">
@@ -95,3 +98,4 @@ export default () => {
     </div>
   );
 };
+export default About

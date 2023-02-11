@@ -95,9 +95,9 @@ const PortfolioInfo = () => {
                 {/* <div className='portfolioInfo-imgItems'> */}
                     {   
                         _.map(imgItem, (img) => (
-                            <div className='img animate__animated animate__zoomIn'> 
+                            <div className='portfolioInfo-imgItems animate__animated animate__zoomIn'> 
                                 <a className='click_worksModal'>
-                                    <img onClick={(e) => imageClick(e, img.id)} className='imgListItem' src={img.url} alt={img.desc} id={img.id} width='300' height='200' />
+                                    <img className='imgListItem' onClick={(e) => imageClick(e, img.id)} src={img.url} alt={img.desc} id={img.id} />
                                 </a>
                             </div>
                         ))

@@ -10,7 +10,6 @@
     width: 75%;
 }
 .works .work-content {
-    /* width: 100%; */
     margin-top: 80px;
     padding-left: 10%;
     height: 10%;
@@ -23,8 +22,7 @@
 }
 .works .work-list {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
+    flex-flow: row-reverse wrap;
 }
 .works .work-list .work-list-item {
     width: 40%;
@@ -71,12 +69,24 @@
 .portfolioInfo {
     display: flex;
     flex-flow: column nowrap;
-    width: 80%;
+    padding: 5% 10%;
 }
 .portfolioInfo-imgList {
     display: flex;
     flex-flow: row wrap;
+    justify-content: left;
 }
 .portfolioInfo-imgItems {
-    
+    flex: 0 0 20%;
+    overflow: hidden; 
+    width: 100%;
+    height: 180px;
+}
+.portfolioInfo-imgItems .imgListItem{
+    margin: 25px 20px;
+    max-width:100%; 
+    max-height:100%; 
+    width: 100%;
+    min-height: 180px;
+    object-fit: cover;
 }
