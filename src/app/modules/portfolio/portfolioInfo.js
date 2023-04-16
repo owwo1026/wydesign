@@ -1,120 +1,81 @@
-import React, { useRef } from 'react'
-import { Tabs } from 'antd';
+import React, { useRef, useState  } from 'react'
 import { useParams } from 'react-router-dom';
 import _ from 'lodash'
-import $ from 'jquery'
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import '../../assets/css/portfolio.css';
 import worksList from '../../assets/json/worksList.json';
-
-const { TabPane } = Tabs;
+import { Modal, Button, Carousel } from 'react-bootstrap';
 
 const PortfolioInfo = () => {
-    let { wid } = useParams();
-    const customSlider = useRef();
-    const settings = {
-        adaptiveHeight: true,
-        lazyLoad: true,
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
+    const [show, setShow] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const handleSelect = (selectedIndex) => {
+        setActiveIndex(selectedIndex);
     };
+    const modalBodyStyle = {
+        width: '60vw',
+        height: 'auto',
+        backgroundColor: '#6A6454',
+        position: 'absolute',
+        left: '50%',
+        transform: 'translate(-50%, 10%)'
+    };
+    let { wid } = useParams();
+    const imgData = worksList[wid];
     function imageClick(e, id) {
-        var width = $('.worksModal').width(),
-            height = $('.worksModal').height(),
-            windowWidth = $(window).width(),
-            windowHeight = $(window).height(),
-            scrollTop = $(window).scrollTop(),
-            // top = (windowHeight / 2 - height / 2) / 3 * 2 + scrollTop,
-            // left = windowWidth / 2 - width / 2,
-            top = (windowHeight/2 - (windowHeight/2)) / 2,
-            left = (windowWidth/2 - (windowWidth/2)) / 2;
-            console.log('top = ' + top);
-            console.log('left = ' + left);
-            console.log('width = ' + width);
-            console.log('height = ' + height);
-            console.log('windowWidth = ' + windowWidth);
-            console.log('windowHeight = ' + windowHeight);
-        $('.worksModal').css({
-            top: top,
-            left: left,
-            transform: `translate(${top}, ${left})`
-        });
         console.log('id = ' + id);
-        customSlider.current.slickGoTo(id);
-        e.stopPropagation();
-        if( $('.works').hasClass('modalBlur') ) {
-            $('.works').removeClass('modalBlur');
-            $('.header').removeClass('modalBlur');
-            $('.footer').removeClass('modalBlur');
-        } else {
-            $('.works:not("#worksModal")').addClass('modalBlur');
-            $('.header').addClass('modalBlur');
-            $('.footer').addClass('modalBlur');
-        }
-        $('.worksModal').toggle();
+        setActiveIndex(id);
+        handleShow();
     }
-    function modalImageClick(e) {
-        e.stopPropagation();
-    }
-    $(document).click(function() {
-        $('.works').removeClass('modalBlur');
-        $('.header').removeClass('modalBlur');
-        $('.footer').removeClass('modalBlur');
-        $('.worksModal').hide();
-    });
     // 處理img
-    // var imgList = [];
     var imgItem = [];
-    var slideList = [];
     var count = 0;
-    const works = require.context("../../assets/works/");
+    const works = require.context('../../assets/works/');
     const worksItem = _.filter(works.keys(), p => p.includes("/"+wid+"/"));
-    console.log("worksItem: " + worksItem);
+    // console.log("worksItem: " + worksItem);
     _.forEach(worksItem.map(works), img => {
         imgItem.push({
             id: count,
             url:  img
         });
-        slideList.push({
-            id: count,
-            url:  img
-        });
         count++;
     });
+    // console.log("imgItem: " + JSON.stringify(imgItem));
     return (
         <div className='portfolioInfo'>
             <div className='title'>
-                <h1>wid : {wid}</h1>    
+                <h1>{imgData.name}</h1>
             </div>
             <div className="portfolioInfo-imgList">
-                {/* <div className='portfolioInfo-imgItems'> */}
-                    {   
-                        _.map(imgItem, (img) => (
-                            <div className='portfolioInfo-imgItems animate__animated animate__zoomIn'> 
-                                <a className='click_worksModal'>
-                                    <img className='imgListItem' onClick={(e) => imageClick(e, img.id)} src={img.url} alt={img.desc} id={img.id} />
-                                </a>
-                            </div>
-                        ))
-                    }
-                {/* </div> */}
-                {/* <div id='worksModal' className='worksModal animate__animated animate__zoomIn' onClick={(e) => modalImageClick(e)}>
-                    <Slider 
-                        {...settings}
-                        ref={slider => (customSlider.current = slider)}
-                    >
-                        { 
-                            _.map(slideList, (item) => (
-                                <img src={item.url} />
-                            ))
-                        }
-                    </Slider>
-                </div> */}
+                {   
+                    _.map(imgItem, (img) => (
+                        <div className='portfolioInfo-imgItems animate__animated animate__zoomIn'> 
+                            <a className='click_worksModal'>
+                                <img className='imgListItem' onClick={(e) => imageClick(e, img.id)} src={img.url} alt={img.desc} id={img.id} />
+                            </a>
+                        </div>
+                    ))
+                }
+                <div id='worksModal' className='worksModal animate__animated animate__zoomIn'>
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Body style={modalBodyStyle} >
+                            <Carousel activeIndex={activeIndex} onSelect={handleSelect}>
+                                { 
+                                    _.map(imgItem, (item) => (
+                                        <Carousel.Item>
+                                            <img
+                                                className="d-block w-100"
+                                                src={item.url}
+                                                alt="First slide"
+                                            />
+                                        </Carousel.Item>
+                                    ))
+                                }
+                            </Carousel>
+                        </Modal.Body>
+                    </Modal>
+                </div>
             </div>
         </div>
     )

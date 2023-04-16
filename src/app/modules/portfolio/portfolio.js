@@ -18,8 +18,8 @@ const Portfolio = () => {
         count = 0;
         const works = require.context("../../assets/works/");
         const worksItem = _.filter(works.keys(), p => p.includes(item.path));
-        // console.log("worksItem = " + worksItem);
-        // console.log("worksItem: "+ worksItem);
+        console.log("worksItem = " + worksItem);
+        console.log("worksItem: "+ worksItem);
         _.forEach(worksItem.map(works), img => {
             imgItem.push({
                 id: count,
@@ -42,14 +42,16 @@ const Portfolio = () => {
         <div className='works'>
             <div className='work-wrap'>
                 <div className='work-content'>
-                    <div className='work-title'><h3>PORTFOLIO / 作品集</h3></div>
-                    <div className='work-desc'><p>作品集寶貝們</p></div>
+                    <div className="work-title">
+                        <span className="about-title-en">Portfolio</span>
+                        <span className="about-title-cn">作品集</span>
+                    </div>
                 </div>
                 <ul className='work-list'>
                     { 
                         _.map(imgList, (item,idx1) => (
                             <li id={'w'+idx1} className='work-list-item'>
-                                <a href={'/portfolioInfo/'+idx1}>
+                                <a href={'/portfolioInfo/'+idx1} style={{'textDecoration':'none'}}>
                                     <div className='project-img'><img src={item.images[0].url} alt={item.images[0].desc} id={item.images[0].id} /></div>
                                     <div className='project-content'>
                                         <div className='project-title'>{item.name}</div>

@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center center;
     background-color: #9D9686;
-    background-image: url('../images/homeBanner/T01_2.jpg');
+    background-image: url("../../assets/images/homeBanner/T01_2.jpg");
 }
 .home .text {
     width: 20vw;

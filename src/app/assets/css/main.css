@@ -1,5 +1,4 @@
 @import '~antd/dist/antd.css';
-
 @font-face {
     font-family: SweetSansProRegular;
     src: url(../font/sweet-sans-pro-cufonfonts-webfont/SweetSansProRegular.woff);
@@ -11,7 +10,7 @@
 html, body {
     height: 100%; /* 外層高度100% */
     margin: 0;
-    font-family: "SweetSansProRegular", "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
+    font-family: "SweetSansProRegular","fantasy", "Hind", "Helvetica", "Chalkboard", "Hannotate SC", "Copperplate", "STHeiti Light", "微軟正黑體";
 }
 .wrapper {
     min-height: 100%;
@@ -25,7 +24,7 @@ html, body {
 }
 .wrapper > * {
     flex: 1 100%;
-    max-width: 100%;
+    max-width: 100vw;
 }
 .content {
     width:100%;
@@ -80,21 +79,16 @@ html, body {
     flex-flow: row nowrap;
     justify-content: right;
     height: 120px;
-    padding: 0% 3vw;
+    padding: 0px 50px;
     background-color: #6A6454;
-    border-radius: 0% 0% 10px 10px;
-    box-shadow: 8px 8px 8px rgb(0 0 0 / 70%);
-    width: 90vw;
+    box-shadow: 0px 8px 8px rgb(0 0 0 / 70%);
+    width: 100vw;
 }
 .header-fixed-top{
-    width: 100%;
-    padding: 0% 5%;
-    /* border-radius: 0% 0% 10px 10px; */
-    box-shadow: 8px 8px 8px rgb(0 0 0 / 70%);
-    margin-top: 0;
+    width: 100vw;
     position: fixed;
     top: 0%;
-    left: 5%;
+    left: 0%;
     animation-name: fadeInDown;
     z-index: 999;
 }
@@ -262,6 +256,20 @@ h1 {
     font-size: 35px;
     color: #000000;
     font-weight: bold;
+}
+.wytitle{
+    flex: 1 1 50%;
+    padding: 50px 15%;
+    color: #907d62;
+    font-size: 1.75em;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    letter-spacing: 10px; /* 字母間距 */
+    text-align: center;
+    margin: 25px 0px;
+    line-height: 40px;
 }
 
 /* Side Bar */

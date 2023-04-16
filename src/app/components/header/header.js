@@ -1,6 +1,5 @@
 import React from "react";
 import { MenuOutlined } from "@ant-design/icons";
-import logo from "../../assets/images/logo/logo_c_5.png";
 import "../../assets/js/main.js";
 import "animate.css";
 import { Menu, Dropdown, Button, message, Space, Tooltip } from "antd";
@@ -24,7 +23,7 @@ export default () => {
         <div className="headerTop header-sticky not-sticky animate__animated animate__fadeInDown">
           <div className="logo">
             <a role="button" href="/">
-              <img id="headerLogo" src={logo} alt="維域設計室內裝修有限公司" />
+              <img id="headerLogo" src={process.env.PUBLIC_URL + '/assets/images/logo/logo_c_5.png'} alt="維域設計室內裝修有限公司" />
             </a>
           </div>
           <div className="miniMenu">

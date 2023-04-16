@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import _ from 'lodash'
 import $ from 'jquery'
 import '../../assets/css/home.css';
-import logo from "../../assets/images/logo/logo_c_1.png";
+// import logo from "../../assets/images/logo/logo_c_1.png";
 
 const Home = () => {
 // 幻燈片設定
